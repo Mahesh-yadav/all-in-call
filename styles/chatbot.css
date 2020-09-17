@@ -1,10 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
-
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -44,6 +37,8 @@ body {
   -webkit-box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.08);
   box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.08);
   border-radius: var(--borderRadius-lg);
+  -webkit-animation: fade-in 1s linear backwards;
+  animation: fade-in 1s linear backwards;
 }
 
 /* SECTION: intro */
@@ -55,6 +50,13 @@ body {
   border-radius: var(--borderRadius-lg) var(--borderRadius-lg) 0px 0px;
   color: var(--color-text-primary);
   padding: 20px 0 0 56px;
+  -webkit-animation: fade-in 1s linear 1.5s backwards;
+  animation: fade-in 1s linear 1.5s backwards;
+}
+
+.intro__child {
+  -webkit-animation: fade-in 1s linear 3s backwards;
+  animation: fade-in 1s linear 3s backwards;
 }
 
 .intro__logo-text {
@@ -93,6 +95,29 @@ body {
   line-height: 23px;
 }
 
+.intro__robot-img-wrapper {
+  height: 67px;
+  width: 67px;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#ff7600),
+    to(#ff5c00)
+  );
+  background: -o-linear-gradient(top, #ff7600 0%, #ff5c00 100%);
+  background: linear-gradient(180deg, #ff7600 0%, #ff5c00 100%);
+  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  padding-left: 15px;
+  padding-top: 18px;
+  margin-top: 16px;
+  margin-left: -18px;
+  -webkit-animation: fade-in-out 5.5s linear forwards;
+  animation: fade-in-out 5.5s linear forwards;
+}
+
 /* SECTION: questions */
 .questions {
   position: relative;
@@ -106,6 +131,8 @@ body {
   margin-left: 13px;
   margin-top: -79px;
   padding: 47px 25px 21px 24px;
+  -webkit-animation: fade-in 1s linear 4.5s backwards;
+  animation: fade-in 1s linear 4.5s backwards;
 }
 
 .robot-img-wrapper {
@@ -168,10 +195,30 @@ body {
   padding-top: 14px;
   padding-left: 26px;
   margin-bottom: 9px;
-  background-image: url('./images/listitem-marker.svg');
+  background-image: url('../images/listitem-marker.svg');
   background-repeat: no-repeat;
   background-position: 5px center;
   background-size: 14px;
+}
+
+.questions__list-item:nth-child(1) {
+  -webkit-animation: fade-in 1s linear 6s backwards;
+  animation: fade-in 1s linear 6s backwards;
+}
+
+.questions__list-item:nth-child(2) {
+  -webkit-animation: fade-in 1s linear 7.5s backwards;
+  animation: fade-in 1s linear 7.5s backwards;
+}
+
+.questions__list-item:nth-child(3) {
+  -webkit-animation: fade-in 1s linear 9s backwards;
+  animation: fade-in 1s linear 9s backwards;
+}
+
+.questions__list-item:nth-child(4) {
+  -webkit-animation: fade-in 1s linear 10.5s backwards;
+  animation: fade-in 1s linear 10.5s backwards;
 }
 
 .questions__start-btn {
@@ -184,7 +231,7 @@ body {
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
   border-radius: var(--borderRadius-xl);
   background: var(--bgColor-primary);
-  font-family: DM Sans, sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -198,8 +245,78 @@ body {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-animation: fade-in 1s linear 12s backwards;
+  animation: fade-in 1s linear 12s backwards;
 }
 
 .questions__start-btn img {
   margin-right: 5px;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade-in-out {
+  0%,
+  54% {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  73%,
+  82% {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+}
+
+@keyframes fade-in-out {
+  0%,
+  54% {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  73%,
+  82% {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
 }

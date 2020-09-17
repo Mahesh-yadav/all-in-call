@@ -1,0 +1,122 @@
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  --bgColor-primary: #e5e5e5;
+}
+
+* {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+  margin: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--bgColor-primary);
+}
+
+.allincall-popup {
+  display: none;
+  width: 416px;
+  height: 629px;
+  position: fixed;
+  overflow: hidden;
+  right: 10px;
+  bottom: 10px;
+  z-index: 1000;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.allincall-popup.show {
+  display: block;
+  -webkit-animation: from-bottom 0.7s linear;
+  animation: from-bottom 0.7s linear;
+}
+
+@-webkit-keyframes from-bottom {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes from-bottom {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.allincall-chatbox-btn {
+  height: 67px;
+  width: 67px;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#ff7600),
+    to(#ff5c00)
+  );
+  background: -o-linear-gradient(top, #ff7600 0%, #ff5c00 100%);
+  background: linear-gradient(180deg, #ff7600 0%, #ff5c00 100%);
+  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  outline: none;
+}
+
+.allincall-chatbox-btn.hide {
+  display: none;
+}
+
+.allincall-chatbox-btn::before {
+  content: 'Hi ! Need some help?';
+  width: 150px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: white;
+  padding: 5px 10px;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#ff7600),
+    to(#ff5c00)
+  );
+  background: -o-linear-gradient(top, #ff7600 0%, #ff5c00 100%);
+  background: linear-gradient(180deg, #ff7600 0%, #ff5c00 100%);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 5px;
+  position: absolute;
+  left: -150px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
