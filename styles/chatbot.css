@@ -199,6 +199,7 @@ body {
   background-repeat: no-repeat;
   background-position: 5px center;
   background-size: 14px;
+  cursor: pointer;
 }
 
 .questions__list-item:nth-child(1) {
@@ -247,6 +248,8 @@ body {
   justify-content: center;
   -webkit-animation: fade-in 1s linear 12s backwards;
   animation: fade-in 1s linear 12s backwards;
+  cursor: pointer;
+  outline: none;
 }
 
 .questions__start-btn img {
